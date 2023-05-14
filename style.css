@@ -1,0 +1,98 @@
+.Logo {
+    transform: rotateY('2px');
+}
+.nav-link{
+    position: relative;
+}
+.nav-link::after{
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: #317773;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} 
+
+.nav-link:hover::after{
+    opacity: 1;
+}
+
+.hero-item{
+ height: 580px;
+}
+
+.hero-image{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.wrapper{
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .car{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.car.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.car img{
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+}
+.car img:first-child{
+  margin-left: 0px;
+}
+@media screen and (max-width: 900px) {
+  .car img{
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 550px) {
+  .car img{
+    width: 100%;
+  }
+}
